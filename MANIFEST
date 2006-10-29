@@ -1,0 +1,18 @@
+Build.PL
+Changes
+lib/Weather/Underground/StationHistory.pm
+MANIFEST			This list of files
+META.yml
+README
+t/000.kwalitee.compile.t
+t/001.kwalitee.pragmas.t
+t/002.kwalitee.uselib.t
+t/003.kwalitee.pod.t
+t/author/consistent_version_numbers.t
+t/author/copyright.t
+t/author/distribution.t
+t/author/perlcritic.t
+t/author/pod_spelling.t
+t/author/README
+t/generate_single_day_station_history_url.t
+t/strip_garbage_from_station_history.t
