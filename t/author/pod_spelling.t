@@ -2,8 +2,8 @@
 
 # Taken from http://www.chrisdolan.net/talk/index.php/2005/11/14/private-regression-tests/.
 
-use warnings;
 use strict;
+use warnings;
 
 use Test::More;
 use Test::Spelling;

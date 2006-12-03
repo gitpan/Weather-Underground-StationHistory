@@ -1,6 +1,6 @@
 ---
 name: Weather-Underground-StationHistory
-version: v1.0.0
+version: v1.0.1
 author:
   - 'Elliot Shank <perl@galumph.com>'
 abstract: Utility functions for dealing with weather station historical data from http://wunderground.com.
@@ -33,7 +33,7 @@ provides:
       version:
         - 1
         - 0
-        - 0
+        - 1
 generated_by: Module::Build version 0.2805
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

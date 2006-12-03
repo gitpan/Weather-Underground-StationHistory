@@ -1,5 +1,8 @@
 Revision history for Weather-Underground-StationHistory
 
+1.0.1  Sun Dec  3 02:53:09 CST 2006
+       Play the kwalitee game.
+
 1.0.0  Sun Dec  3 01:08:25 CST 2006
        Declare production-ready.  Comply with bleading-edge
        Perl::Critic.

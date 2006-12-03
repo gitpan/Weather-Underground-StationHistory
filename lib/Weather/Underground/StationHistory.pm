@@ -4,7 +4,7 @@ use 5.006000;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.0');
+use version; our $VERSION = qv('1.0.1');
 
 use Regexp::Common;
 
@@ -61,7 +61,7 @@ weather station historical data from L<http://wunderground.com>.
 
 =head1 VERSION
 
-This document describes Weather::Underground::StationHistory version 1.0.0.
+This document describes Weather::Underground::StationHistory version 1.0.1.
 
 
 =head1 SYNOPSIS

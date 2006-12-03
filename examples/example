@@ -1,0 +1,38 @@
+#!/usr/bin/perl
+
+use 5.006000;
+use strict;
+use warnings;
+
+use Weather::Underground::StationHistory qw{ :all };
+
+use LWP::Simple;
+
+print "We're just here for the kwalitee.\n\nHeh.\n\n";
+
+my $url =
+    generate_single_day_station_history_url(
+        'KILCHICA52',
+        2006,
+        10,
+        27,
+    );
+
+print "We're going to attempt to retrieve data from $url.\n\n";
+
+my $supposed_csv = get($url);
+
+print "And here's what we got:\n\n";
+
+print $supposed_csv;
+
+print "\n\nUgh.  Let's clean that up:\n\n";
+
+print strip_garbage_from_station_history($supposed_csv);
+
+print "\n\nTADA!\n\n:]\n\n";
+
+# setup vim: set filetype=perl tabstop=4 shiftwidth=4 shiftround textwidth=0 :
+# setup vim: set nowrap autoindent foldmethod=indent foldlevel=0 :
+# buffer: set_noexpandtab_and_retab_when_reading :
+# buffer: expand_tabs_in_output strip_trailing_whitespace_on_write :
