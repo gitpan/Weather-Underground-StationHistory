@@ -1,6 +1,6 @@
 #!perl
 
-use Test::Perl::Critic (-severity => 3);
+use Test::Perl::Critic (-severity => 1, -profile => 't/author/perlcriticrc' );
 use Module::Build;
 use File::Spec::Functions;
 

@@ -1,9 +1,10 @@
 package Weather::Underground::StationHistory;
 
+use 5.006000;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('0.0.1');
+use version; our $VERSION = qv('1.0.0');
 
 use Regexp::Common;
 
@@ -60,7 +61,7 @@ weather station historical data from L<http://wunderground.com>.
 
 =head1 VERSION
 
-This document describes Weather::Underground::StationHistory version 0.0.1.
+This document describes Weather::Underground::StationHistory version 1.0.0.
 
 
 =head1 SYNOPSIS

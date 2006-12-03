@@ -12,6 +12,7 @@ t/author/consistent_version_numbers.t
 t/author/copyright.t
 t/author/distribution.t
 t/author/perlcritic.t
+t/author/perlcriticrc
 t/author/pod_spelling.t
 t/author/README
 t/generate_single_day_station_history_url.t

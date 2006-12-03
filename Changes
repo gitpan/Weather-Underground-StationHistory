@@ -1,5 +1,9 @@
 Revision history for Weather-Underground-StationHistory
 
+1.0.0  Sun Dec  3 01:08:25 CST 2006
+       Declare production-ready.  Comply with bleading-edge
+       Perl::Critic.
+
 0.0.1  Thu Oct 26 00:13:56 2006
        Initial release.
 

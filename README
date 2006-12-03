@@ -1,4 +1,4 @@
-Weather-Underground-StationHistory version 0.0.1
+Weather-Underground-StationHistory version 1.0.0
 
 This module provides a URL generator function for retrieving historical data
 for weather stations from Weather Underground (http://wunderground.com).
