@@ -2,7 +2,7 @@ Build.PL
 Changes
 examples/example
 lib/Weather/Underground/StationHistory.pm
-MANIFEST			This list of files
+MANIFEST                          This list of files
 META.yml
 README
 t/author/consistent_version_numbers.t

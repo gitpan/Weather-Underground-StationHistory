@@ -4,7 +4,7 @@ use 5.006000;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.1');
+use version; our $VERSION = qv('1.0.2');
 
 use Regexp::Common;
 
@@ -12,8 +12,8 @@ use Exporter qw( import );
 
 our @EXPORT_OK =
     qw{
-        generate_single_day_station_history_url
-        strip_garbage_from_station_history
+        &generate_single_day_station_history_url
+        &strip_garbage_from_station_history
     };
 our %EXPORT_TAGS = (
     all => [@EXPORT_OK],
@@ -61,7 +61,7 @@ weather station historical data from L<http://wunderground.com>.
 
 =head1 VERSION
 
-This document describes Weather::Underground::StationHistory version 1.0.1.
+This document describes Weather::Underground::StationHistory version 1.0.2.
 
 
 =head1 SYNOPSIS
@@ -172,7 +172,7 @@ Elliot Shank  C<< <perl@galumph.com> >>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2006, Elliot Shank C<< <perl@galumph.com> >>. All rights
+Copyright (c) 2006-2007, Elliot Shank C<< <perl@galumph.com> >>. All rights
 reserved.
 
 This module is free software; you can redistribute it and/or modify it under
@@ -202,7 +202,6 @@ DAMAGES.
 
 =cut
 
-# setup vim: set filetype=perl tabstop=4 shiftwidth=4 shiftround textwidth=0 :
-# setup vim: set nowrap autoindent foldmethod=indent foldlevel=0 :
-# buffer: set_noexpandtab_and_retab_when_reading :
-# buffer: expand_tabs_in_output strip_trailing_whitespace_on_write :
+# setup vim: set filetype=perl tabstop=4 softtabstop=4 expandtab :
+# setup vim: set shiftwidth=4 shiftround textwidth=0 nowrap autoindent :
+# setup vim: set foldmethod=indent foldlevel=0 :

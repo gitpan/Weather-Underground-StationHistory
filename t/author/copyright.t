@@ -26,16 +26,16 @@ sub check_file {
     return if (! -f $_);
 
     # Filter the list of filenames
-    return if (! m,^(?: README.*         # docs
-                     |  .*/scripts/[^/]+ # programs
-                     |  .*/script/[^/]+  # programs
-                     |  .*/bin/[^/]+     # programs
-                     |  .*\.(?: pl       # program ext
-                             |  pm       # module ext
-                             |  html     # doc ext
-                             |  3pm      # doc ext
-                             |  3        # doc ext
-                             |  1        # doc ext
+    return if (! m,^(?: README.*          # docs
+                     |  .*/scripts/[^/]+  # programs
+                     |  .*/script/[^/]+   # programs
+                     |  .*/bin/[^/]+      # programs
+                     |  .*\.(?: pl        # program ext
+                             |  pm        # module ext
+                             |  html      # doc ext
+                             |  3pm       # doc ext
+                             |  3         # doc ext
+                             |  1         # doc ext
                             )
                     )$,xms);
 
@@ -47,22 +47,20 @@ sub check_file {
     my @copyright_years = $content =~ m/
                                        (?: copyright | \(c\) | © )
                                        \s*
-                                       (?: \d{4} \- )?
+                                       (?: \d{4} \\? - )?
                                        (\d{4})
                                        /gixms;
     if (0 < grep {$_ ne $this_year} @copyright_years) {
         fail("$_ copyrights: @copyright_years");
-    }
-    elsif (0 == @copyright_years) {
+    } elsif (0 == @copyright_years) {
         pass("$_, no copyright found");
-    }
-    else {
+    } else {
         pass($_);
-    }
-    $copyrights_found += @copyright_years;
-}
+    } # end if
 
-# setup vim: set filetype=perl tabstop=4 shiftwidth=4 shiftround textwidth=0 :
-# setup vim: set nowrap autoindent foldmethod=indent foldlevel=0 :
-# buffer: set_noexpandtab_and_retab_when_reading :
-# buffer: expand_tabs_in_output strip_trailing_whitespace_on_write :
+    $copyrights_found += @copyright_years;
+} # end check_file()
+
+# setup vim: set filetype=perl tabstop=4 softtabstop=4 expandtab :
+# setup vim: set shiftwidth=4 shiftround textwidth=0 nowrap autoindent :
+# setup vim: set foldmethod=indent foldlevel=0 :

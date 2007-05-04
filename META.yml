@@ -1,6 +1,6 @@
 ---
 name: Weather-Underground-StationHistory
-version: v1.0.1
+version: 1.0.2
 author:
   - 'Elliot Shank <perl@galumph.com>'
 abstract: Utility functions for dealing with weather station historical data from http://wunderground.com.
@@ -28,13 +28,8 @@ dynamic_config: 1
 provides:
   Weather::Underground::StationHistory:
     file: lib/Weather/Underground/StationHistory.pm
-    version: !!perl/hash:version
-      qv: 1
-      version:
-        - 1
-        - 0
-        - 1
-generated_by: Module::Build version 0.2805
+    version: 1.0.2
+generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2

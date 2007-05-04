@@ -1,3 +1,6 @@
+# Make things as strict as possible.
+severity = 1
+
 # Tags are good enough for me.
 [-Miscellanea::RequireRcsKeywords]
 
@@ -12,15 +15,14 @@
 # useful.)
 [-CodeLayout::RequireTidyCode]
 
-# TODO: Reenable this once this policy can be configured
-# to match Module::Starter::PBP
-[-Documentation::RequirePodSections]
+[Documentation::RequirePodSections]
+source   = module_starter_pbp_0_0_3
+language = en_US
 
 # Magic numbers BAD.  (It doesn't hurt that I wrote this policy.)
 [ValuesAndExpressions::ProhibitMagicNumbers]
 severity = 4
 
-# setup vim: set filetype=conf tabstop=4 shiftwidth=4 shiftround textwidth=0 :
-# setup vim: set nowrap autoindent foldmethod=indent foldlevel=0 :
-# buffer: set_noexpandtab_and_retab_when_reading :
-# buffer: expand_tabs_in_output strip_trailing_whitespace_on_write :
+# setup vim: set filetype=conf tabstop=4 softtabstop=4 expandtab :
+# setup vim: set shiftwidth=4 shiftround textwidth=0 nowrap autoindent :
+# setup vim: set foldmethod=indent foldlevel=0 :

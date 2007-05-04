@@ -4,12 +4,15 @@ use 5.006000;
 use strict;
 use warnings;
 
+use version; our $VERSION = qv('1.0.2');
+
 use Weather::Underground::StationHistory qw{ :all };
 
 use LWP::Simple;
 
 print "We're just here for the kwalitee.\n\nHeh.\n\n";
 
+## no critic (ProhibitMagicNumbers)
 my $url =
     generate_single_day_station_history_url(
         'KILCHICA52',
@@ -17,6 +20,7 @@ my $url =
         10,
         27,
     );
+## use critic
 
 print "We're going to attempt to retrieve data from $url.\n\n";
 
@@ -32,7 +36,6 @@ print strip_garbage_from_station_history($supposed_csv);
 
 print "\n\nTADA!\n\n:]\n\n";
 
-# setup vim: set filetype=perl tabstop=4 shiftwidth=4 shiftround textwidth=0 :
-# setup vim: set nowrap autoindent foldmethod=indent foldlevel=0 :
-# buffer: set_noexpandtab_and_retab_when_reading :
-# buffer: expand_tabs_in_output strip_trailing_whitespace_on_write :
+# setup vim: set filetype=perl tabstop=4 softtabstop=4 expandtab :
+# setup vim: set shiftwidth=4 shiftround textwidth=0 nowrap autoindent :
+# setup vim: set foldmethod=indent foldlevel=0 :
