@@ -4,11 +4,12 @@ use 5.006000;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.2');
+use version; our $VERSION = qv('v1.0.3');
+
+use Exporter;
+use base 'Exporter';
 
 use Regexp::Common;
-
-use Exporter qw( import );
 
 our @EXPORT_OK =
     qw{
@@ -61,7 +62,7 @@ weather station historical data from L<http://wunderground.com>.
 
 =head1 VERSION
 
-This document describes Weather::Underground::StationHistory version 1.0.2.
+This document describes Weather::Underground::StationHistory version 1.0.3.
 
 
 =head1 SYNOPSIS
@@ -104,7 +105,7 @@ encounter problems.
 
 =over
 
-=item generate_single_day_station_history_url($station_id, $year, $month_number, $day_of_month)
+=item C<generate_single_day_station_history_url($station_id, $year, $month_number, $day_of_month)>
 
 Returns the URL to use for retrieving data for the station on the specified
 day.
@@ -114,7 +115,7 @@ C<$year> needs to be the full year number; two digit years are not supported.
 C<$month_number> needs to be in the range 1 to 12.
 
 
-=item strip_garbage_from_station_history($original_contents)
+=item C<strip_garbage_from_station_history($original_contents)>
 
 Takes a string containing the data retrieved from Weather Underground and
 returns a string containing the same data, without the standard problematic

@@ -1,5 +1,8 @@
 Revision history for Weather-Underground-StationHistory
 
+1.0.3  Sun May  6 14:15:37 CDT 2007
+       Attempt to deal with limitations of Exporter in perl v5.6.
+
 1.0.2  Fri May  4 05:55:49 CDT 2007
        Cleanup tests, including dealing with current Perl::Critic.
 
