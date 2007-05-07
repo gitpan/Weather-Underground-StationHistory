@@ -1,9 +1,9 @@
 ---
 name: Weather-Underground-StationHistory
-version: v1.0.3
+version: v1.0.4
 author:
   - 'Elliot Shank <perl@galumph.com>'
-abstract: Utility functions for dealing with weather station historical data from http://wunderground.com.
+abstract: Utility functions for dealing with weather station historical data from L<http://wunderground.com>.
 license: perl
 resources:
   license: http://dev.perl.org/licenses/
@@ -28,7 +28,7 @@ dynamic_config: 1
 provides:
   Weather::Underground::StationHistory:
     file: lib/Weather/Underground/StationHistory.pm
-    version: v1.0.3
+    version: v1.0.4
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

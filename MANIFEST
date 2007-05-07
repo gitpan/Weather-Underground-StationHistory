@@ -2,9 +2,9 @@ Build.PL
 Changes
 examples/example
 lib/Weather/Underground/StationHistory.pm
-MANIFEST                          This list of files
-META.yml
+MANIFEST			This list of files
 README
+t/a_use_ok.t
 t/author/consistent_version_numbers.t
 t/author/copyright.t
 t/author/distribution.t
@@ -15,5 +15,7 @@ t/author/pod_coverage.t
 t/author/pod_spelling.t
 t/author/pod_syntax.t
 t/author/README
-t/generate_single_day_station_history_url.t
-t/strip_garbage_from_station_history.t
+t/b_generate_single_day_station_history_url.t
+t/b_strip_garbage_from_station_history.t
+Makefile.PL
+META.yml

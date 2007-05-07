@@ -1,10 +1,11 @@
 package Weather::Underground::StationHistory;
 
+use utf8;
 use 5.006000;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.0.3');
+use version; our $VERSION = qv('v1.0.4');
 
 use Exporter;
 use base 'Exporter';
@@ -54,15 +55,16 @@ sub strip_garbage_from_station_history {
 1; # Magic true value required at end of module
 __END__
 
+=encoding utf8
+
 =head1 NAME
 
-Weather::Underground::StationHistory - Utility functions for dealing with
-weather station historical data from L<http://wunderground.com>.
+Weather::Underground::StationHistory - Utility functions for dealing with weather station historical data from L<http://wunderground.com>.
 
 
 =head1 VERSION
 
-This document describes Weather::Underground::StationHistory version 1.0.3.
+This document describes Weather::Underground::StationHistory version 1.0.4.
 
 
 =head1 SYNOPSIS

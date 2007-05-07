@@ -1,6 +1,10 @@
 use strict;
 use warnings;
+
+use English qw{ −no_match_vars };
+
 use Module::Build;
+
 
 my $class;
 my $builder;
@@ -10,10 +14,20 @@ $class = Module::Build->subclass( code => <<'SUBCLASS' );
     sub ACTION_authortest {
         my $self = shift;
 
-        $self->dispatch('build');
+        $self->depends_on('build');
+        $self->depends_on('manifest');
+        $self->depends_on('distmeta');
         $self->recursive_test_files(1);
-        $self->dispatch('test');
+        $self->depends_on('test');
     } # end ACTION_authortest()
+
+    sub ACTION_distdir {
+        my $self = shift;
+
+        $self->depends_on('authortest');
+
+        $self->SUPER::ACTION_distdir;
+    } # end ACTION_distdir
 
 SUBCLASS
 
@@ -21,8 +35,6 @@ $builder = $class->new(
     module_name     => 'Weather::Underground::StationHistory',
     license         => 'perl',
     dist_author     => 'Elliot Shank <perl@galumph.com>',
-    dist_abstract   =>
-        "Utility functions for dealing with weather station historical data from http://wunderground.com.",
     dynamic_config  => 1,
     build_requires  => {
         'version'           => 0,
@@ -44,16 +56,24 @@ $builder = $class->new(
         'Test::Pod::Coverage'           => 0,
         'Test::Spelling'                => 0,
     },
-    script_files    => [ glob('script/*') ],
-    create_packlist => 1,
-    sign            => 0,
-    add_to_cleanup  => [
-        'Weather-Underground-StationHistory-*',
-        '*.vim_backup',
-        'pod2htm?.tmp',
-        '*.bak',
+    script_files       => [ glob('script/*') ],
+    create_packlist    => 1,
+    sign               => 0,
+    create_makefile_pl => 'passthrough',
+    add_to_cleanup     => [
+        qw{
+            MANIFEST
+            MANIFEST.bak
+            META.yml
+            Makefile
+            Makefile.PL
+            Weather-Underground-StationHistory-*
+            *.vim_backup
+            pod2htm?.tmp
+        }
     ],
 );
+
 
 $builder->create_build_script();
 
