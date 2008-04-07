@@ -1,11 +1,11 @@
 package Weather::Underground::StationHistory;
 
-use utf8;
 use 5.006000;
+
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.0.4');
+use version; our $VERSION = qv('v1.0.5');
 
 use Exporter;
 use base 'Exporter';
@@ -20,6 +20,8 @@ our @EXPORT_OK =
 our %EXPORT_TAGS = (
     all => [@EXPORT_OK],
 );
+
+my $EMPTY_STRING = q<>;
 
 sub generate_single_day_station_history_url {
     my ($station_id, $year, $month_number, $day_of_month) = @_;
@@ -36,14 +38,14 @@ sub generate_single_day_station_history_url {
 
 sub strip_garbage_from_station_history {
     my $original_contents   = shift;
-    my @original_lines      = split / [\r\n]+ /xms, $original_contents;
-    my $resulting_contents  = q{};
+    my @original_lines      = split m/ [\r\n]+ /xms, $original_contents;
+    my $resulting_contents  = $EMPTY_STRING;
 
     foreach my $original_line (@original_lines) {
-        $original_line =~ s[ $RE{balanced}{-parens => '<>'} ][]xmsg;
-        $original_line =~ s[ $RE{ws}{crop}                  ][]xmsg;
+        $original_line =~ s/ $RE{balanced}{-parens => '<>'} //xmsg;
+        $original_line =~ s/ $RE{ws}{crop}                  //xmsg;
 
-        if ($original_line !~ m/ \A \z /xms) {
+        if ($original_line ne $EMPTY_STRING) {
             $resulting_contents .= "$original_line\n";
         } # end if
     } # end foreach
@@ -55,7 +57,7 @@ sub strip_garbage_from_station_history {
 1; # Magic true value required at end of module
 __END__
 
-=encoding utf8
+=for stopwords CSV
 
 =head1 NAME
 
@@ -64,7 +66,7 @@ Weather::Underground::StationHistory - Utility functions for dealing with weathe
 
 =head1 VERSION
 
-This document describes Weather::Underground::StationHistory version 1.0.4.
+This document describes Weather::Underground::StationHistory version 1.0.5.
 
 
 =head1 SYNOPSIS
@@ -175,7 +177,7 @@ Elliot Shank  C<< <perl@galumph.com> >>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2006-2007, Elliot Shank C<< <perl@galumph.com> >>. All rights
+Copyright (c) 2006-2008, Elliot Shank C<< <perl@galumph.com> >>. All rights
 reserved.
 
 This module is free software; you can redistribute it and/or modify it under

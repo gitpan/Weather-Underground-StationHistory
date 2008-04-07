@@ -1,10 +1,11 @@
 #!/usr/bin/perl
 
+use utf8;
 use 5.006000;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.0.4');
+use version; our $VERSION = qv('v1.0.5');
 
 use Weather::Underground::StationHistory qw{ :all };
 

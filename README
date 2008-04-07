@@ -1,4 +1,4 @@
-Weather-Underground-StationHistory version 1.0.4
+Weather-Underground-StationHistory version 1.0.5
 
 This module provides a URL generator function for retrieving historical data
 for weather stations from Weather Underground (http://wunderground.com).
@@ -33,7 +33,7 @@ Runs extra tests that might not pass anywhere other than the author's computer.
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2006-2007, Elliot Shank
+Copyright (C) 2006-2008, Elliot Shank
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

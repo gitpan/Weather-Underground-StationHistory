@@ -1,5 +1,7 @@
 # Make things as strict as possible.
 severity = 1
+verbose = %f: %m at line %l, column %c.  %e.  (Severity: %s, %p)\n
+theme = core
 
 # Tags are good enough for me.
 [-Miscellanea::RequireRcsKeywords]
@@ -22,6 +24,10 @@ language = en_US
 # Magic numbers BAD.  (It doesn't hurt that I wrote this policy.)
 [ValuesAndExpressions::ProhibitMagicNumbers]
 severity = 4
+
+# For some reason, this chokes on v-strings within a version constructor
+# and I don't have time to chase this down.
+[-Modules::PerlMinimumVersion]
 
 # setup vim: set filetype=conf tabstop=4 softtabstop=4 expandtab :
 # setup vim: set shiftwidth=4 shiftround textwidth=0 nowrap autoindent :

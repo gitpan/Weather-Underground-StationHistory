@@ -12,7 +12,7 @@ BEGIN {
 } # end BEGIN
 
 all_critic_ok(
-    map { catfile($build->base_dir(), $_) } qw{ lib script examples }
+    map { catfile($build->base_dir(), $_) } qw{ lib script }
 );
 
 # setup vim: set filetype=perl tabstop=4 softtabstop=4 expandtab :
